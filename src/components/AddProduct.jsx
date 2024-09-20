@@ -14,7 +14,7 @@ export default function AddProduct() {
     type: "",
   });
   const { allData, getProduct } = useGetData();
-  const url = process.env.URL_LINK;
+  const url = process.env.REACT_APP_URL_LINK;
 
   const navigate = useNavigate();
 

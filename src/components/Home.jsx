@@ -7,7 +7,7 @@ export default function AllProducts() {
   const { allData, getProduct } = useGetData();
   const navigate = useNavigate();
 
-  const url = process.env.URL_LINK;
+  const url = process.env.REACT_APP_URL_LINK;
 
   useEffect(getProduct, []);
 
