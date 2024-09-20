@@ -18,7 +18,9 @@ export default function AddProduct() {
 
   const navigate = useNavigate();
 
-  getProduct();
+  useEffect(() => {
+    getProduct();
+  }, []);
 
   function updateNewProduct(key, value) {
     setValErrors((current) => {
