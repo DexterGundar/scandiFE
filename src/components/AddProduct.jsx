@@ -168,7 +168,7 @@ export default function AddProduct() {
               </div>
             </div>
           </div>
-          <div id="productType">
+          <div>
             <label htmlFor="type">Type Switcher:</label>
             <div className="input-notification">
               <select
