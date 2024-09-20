@@ -9,9 +9,7 @@ export default function AllProducts() {
 
   const url = process.env.REACT_APP_URL_LINK;
 
-  useEffect(() => {
-    getProduct();
-  }, []);
+  getProduct();
 
   let deleteSelected = () => {
     const sBody = { dvd: [], book: [], furniture: [] };
