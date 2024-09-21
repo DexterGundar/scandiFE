@@ -54,7 +54,7 @@ export default function AddProduct({ data, fetchProducts }) {
     let isAllFieldsFilled = Object.values(newProduct).some((v) => !v);
     console.log(isAllFieldsFilled);
     console.log(skuExist);
-    if (skuExist) return;
+    if (skuExist) return navigate("/");
     if (
       (Object.values(newProduct).length === 7 &&
         !isAllFieldsFilled &&
