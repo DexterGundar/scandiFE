@@ -38,8 +38,9 @@ export default function AddProduct() {
       return { ...currentProduct, type: e.target.value };
     });
   }
-  function onSubmit() {
-    let skuExist = allData.some(({ sku }) => sku === newProduct.sku);
+  async function onSubmit() {
+    let previousData = await getProduct();
+    let skuExist = previousData?.some(({ sku }) => sku === newProduct.sku);
 
     skuExist ? setSkuError(true) : setSkuError(false);
 
