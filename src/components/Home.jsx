@@ -55,10 +55,7 @@ export default function AllProducts({ data, fetchProducts }) {
         >
           ADD
         </button>
-        <button
-          // id="delete-product-btn"
-          onClick={deleteSelected}
-        >
+        <button id="delete-product-btn" onClick={deleteSelected}>
           MASS DELETE
         </button>
         {/* </div> */}
@@ -72,7 +69,7 @@ export default function AllProducts({ data, fetchProducts }) {
                 <section>
                   <input
                     type="checkbox"
-                    className="delete-checkbox"
+                    className=".delete-checkbox"
                     onChange={() => onCheck(sku, type)}
                     checked={checked.some(
                       (el) => el.sku === sku && el.type === type
