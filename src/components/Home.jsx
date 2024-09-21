@@ -47,22 +47,18 @@ export default function AllProducts({ data, fetchProducts }) {
     <>
       <header>
         <h1>Product List</h1>
-        <div className="actions">
-          <button
-            name="add"
-            id="add-btn"
-            onClick={() => navigate("/add-product")}
-          >
-            ADD
-          </button>
-          <button
-            text="MASS DELETE"
-            id="delete-product-btn"
-            onClick={deleteSelected}
-          >
-            MASS DELETE
-          </button>
-        </div>
+        {/* <div className="actions"> */}
+        <button
+          name="add"
+          id="add-btn"
+          onClick={() => navigate("/add-product")}
+        >
+          ADD
+        </button>
+        <button id="delete-product-btn" onClick={deleteSelected}>
+          MASS DELETE
+        </button>
+        {/* </div> */}
       </header>
 
       <ul className="product-grid">
