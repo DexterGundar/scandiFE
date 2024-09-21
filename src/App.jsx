@@ -7,10 +7,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [allData, setAllData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   const getProduct = async () => {
-    setIsLoading(true);
     try {
       const res = await fetch(process.env.REACT_APP_URL_LINK, {
         "Content-Type": "application/json",
@@ -18,10 +16,8 @@ function App() {
       });
       const data = await res.json();
       setAllData(data);
-      setIsLoading(false);
     } catch (error) {
       console.log(error);
-      setIsLoading(false);
     }
   };
 
