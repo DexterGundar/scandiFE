@@ -51,7 +51,7 @@ export default function AllProducts({ data, fetchProducts }) {
       </header>
 
       <ul className="product-grid">
-        {allData.map(
+        {data.map(
           ({ sku, name, price, type, height, width, length, weight, size }) => {
             return (
               <li key={sku} className="product-card">
