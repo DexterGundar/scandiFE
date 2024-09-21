@@ -46,7 +46,7 @@ li {
   text-align: center;
 }
 
-.product-card input[type="checkbox"] {
+.product-card {
   position: absolute;
   top: 10px;
   left: 10px;
