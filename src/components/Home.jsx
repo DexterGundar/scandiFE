@@ -55,7 +55,11 @@ export default function AllProducts({ data, fetchProducts }) {
           >
             ADD
           </button>
-          <button id="delete-product-btn" onClick={deleteSelected}>
+          <button
+            text="MASS DELETE"
+            id="delete-product-btn"
+            onClick={deleteSelected}
+          >
             MASS DELETE
           </button>
         </div>
