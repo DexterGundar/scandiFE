@@ -54,7 +54,7 @@ export default function AddProduct({ data, fetchProducts }) {
     let isAllFieldsFilled = Object.values(newProduct).some((v) => !v);
     console.log(isAllFieldsFilled);
     console.log(skuExist);
-    if (skuExist) return navigate("/");
+    if (skuExist) return;
     if (
       (Object.values(newProduct).length === 7 &&
         !isAllFieldsFilled &&
@@ -117,7 +117,7 @@ export default function AddProduct({ data, fetchProducts }) {
                 required
                 placeholder="Enter product SKU"
                 onChange={(e) => {
-                  updateNewProduct("sku", e.target.value?.toLowerCase());
+                  updateNewProduct("sku", e.target.value);
                 }}
               />
               <div
