@@ -3,15 +3,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useGetData from "../hooks/useGetData";
 
-export default function AllProducts() {
-  const { allData, getProduct } = useGetData();
+export default function AllProducts({ data, fetchProducts }) {
   const navigate = useNavigate();
 
   const url = process.env.REACT_APP_URL_LINK;
 
-  useEffect(() => {
-    getProduct();
-  }, []);
+  // useEffect(() => {
+  //   getProduct();
+  // }, []);
 
   let deleteSelected = () => {
     const sBody = { dvd: [], book: [], furniture: [] };
@@ -26,7 +25,7 @@ export default function AllProducts() {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
-        getProduct();
+        fetchProducts();
       });
   };
   return (
@@ -66,8 +65,8 @@ export default function AllProducts() {
                   <h3>{name}</h3>
                   <h2>{price} $</h2>
 
-                  {type === "book" && <h3>weight: {weight} KG</h3>}
-                  {type === "dvd" && <h3>size: {size} MB</h3>}
+                  {type === "book" && <h3>Weight: {weight} KG</h3>}
+                  {type === "dvd" && <h3>Size: {size} MB</h3>}
                   {type === "furniture" && (
                     <h3>
                       Dimensions: {height}x{width}x{length}{" "}

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useGetData from "../hooks/useGetData";
 
-export default function AddProduct() {
+export default function AddProduct({ data, fetchProducts }) {
   const [selectedType, setSelectedType] = useState();
   const [skuError, setSkuError] = useState(false);
   const [valErrors, setValErrors] = useState({});
@@ -13,14 +13,10 @@ export default function AddProduct() {
     price: null,
     type: "",
   });
-  const { allData, getProduct } = useGetData();
+
   const url = process.env.REACT_APP_URL_LINK;
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    getProduct();
-  }, []);
 
   function updateNewProduct(key, value) {
     setValErrors((current) => {
@@ -39,8 +35,7 @@ export default function AddProduct() {
     });
   }
   async function onSubmit() {
-    let previousData = await getProduct();
-    let skuExist = previousData?.some(({ sku }) => sku === newProduct.sku);
+    let skuExist = data?.some(({ sku }) => sku === newProduct.sku);
 
     skuExist ? setSkuError(true) : setSkuError(false);
 
@@ -77,6 +72,7 @@ export default function AddProduct() {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then(() => {
+          fetchProducts();
           navigate("/");
         })
         .catch((error) => console.error(error));
