@@ -70,6 +70,7 @@ export default function AllProducts({ data, fetchProducts }) {
                   <input
                     type="checkbox"
                     className="delete-checkbox"
+                    id={sku}
                     onChange={() => onCheck(sku, type)}
                     value={checked.some(
                       (el) => el.sku === sku && el.type === type
