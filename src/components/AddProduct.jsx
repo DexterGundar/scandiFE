@@ -72,7 +72,7 @@ export default function AddProduct({ data, fetchProducts }) {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then(() => {
-          // fetchProducts();
+          fetchProducts();
           navigate("/");
         })
         .catch((error) => console.error(error));
