@@ -71,8 +71,8 @@ export default function AddProduct({ data, fetchProducts }) {
         .post(`${url}/add-product`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         })
-        .then(() => {
-          fetchProducts();
+        .then(async () => {
+          await fetchProducts();
           navigate("/");
         })
         .catch((error) => console.error(error));
