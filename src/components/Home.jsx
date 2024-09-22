@@ -69,13 +69,13 @@ export default function AllProducts({ data, fetchProducts }) {
                 <section>
                   <input
                     type="checkbox"
-                    className="delete-checkbox"
+                    className=".delete-checkbox"
                     id={sku}
                     onChange={() => onCheck(sku, type)}
-                    value={checked.some(
+                    checked={checked.some(
                       (el) => el.sku === sku && el.type === type
                     )}
-                    checked={checked.some(
+                    value={checked.some(
                       (el) => el.sku === sku && el.type === type
                     )}
                   />
