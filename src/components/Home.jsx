@@ -20,17 +20,9 @@ export default function AllProducts({ data, fetchProducts }) {
       }
     });
   };
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, []);
 
   let deleteSelected = () => {
     const sBody = { dvd: [], book: [], furniture: [] };
-
-    // document.querySelectorAll("input[type=checkbox]:checked").forEach((e) => {
-    //   let [type, sku] = e.value.split("-");
-    //   sBody[type].push(sku);
-    // });
 
     checked.forEach(({ sku, type }) => {
       sBody[type].push(sku);
