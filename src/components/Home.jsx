@@ -75,8 +75,8 @@ export default function AllProducts({ data, fetchProducts }) {
                   <h3>{name}</h3>
                   <h2>{price} $</h2>
 
-                  {type === "book" && <h3>weight: {weight} KG</h3>}
-                  {type === "dvd" && <h3>size: {size} MB</h3>}
+                  {type === "book" && <h3>Weight: {weight} KG</h3>}
+                  {type === "dvd" && <h3>Size: {size} MB</h3>}
                   {type === "furniture" && (
                     <h3>
                       Dimensions: {height}x{width}x{length}{" "}
