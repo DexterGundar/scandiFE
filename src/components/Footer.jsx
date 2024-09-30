@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <footer>Scandiweb Test assignment</footer>;
+  return <footer>MySQL, PHP BE, React FE</footer>;
 }
